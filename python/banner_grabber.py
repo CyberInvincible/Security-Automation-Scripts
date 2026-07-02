@@ -1,18 +1,33 @@
 import socket
 
-target = input("Enter IP or hostname: ")
-port = int(input("Enter port: "))
 
-try:
-    s = socket.socket()
-    s.settimeout(3)
-    s.connect((target, port))
+def banner_grabber(host, port):
+    try:
+        print("\n" + "=" * 60)
+        print("Banner Grabber")
+        print("=" * 60)
 
-    banner = s.recv(1024)
-    print("\nBanner:")
-    print(banner.decode(errors="ignore"))
+        print(f"Target : {host}")
+        print(f"Port   : {port}")
 
-    s.close()
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(5)
 
-except Exception as e:
-    print(f"Error: {e}")
+        s.connect((host, port))
+
+        try:
+            banner = s.recv(1024).decode(errors="ignore").strip()
+
+            if banner:
+                print("\nBanner")
+                print("-" * 30)
+                print(banner)
+            else:
+                print("\nNo banner received.")
+        except:
+            print("\nConnected successfully, but no banner was received.")
+
+        s.close()
+
+    except Exception as e:
+        print(f"\nConnection failed: {e}")

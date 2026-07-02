@@ -7,13 +7,14 @@ def whois_lookup(domain):
         print(f"WHOIS Report for: {domain}")
         print("=" * 60)
 
-        info = whois.whois(domain)
+        result = whois.whois(domain)
 
-        print(f"Domain Name      : {info.domain_name}")
-        print(f"Registrar        : {info.registrar}")
-        print(f"Creation Date    : {info.creation_date}")
-        print(f"Expiration Date  : {info.expiration_date}")
-        print(f"Name Servers     : {info.name_servers}")
+        print(f"Domain Name     : {result.domain_name}")
+        print(f"Registrar       : {result.registrar}")
+        print(f"Creation Date   : {result.creation_date}")
+        print(f"Expiration Date : {result.expiration_date}")
+        print(f"Updated Date    : {result.updated_date}")
+        print(f"Name Servers    : {result.name_servers}")
 
     except Exception as e:
         print(f"\nError: {e}")

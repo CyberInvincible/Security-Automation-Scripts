@@ -1,6 +1,8 @@
 from python.security_headers_checker import check_headers
 from python.dns_lookup import dns_lookup
 from python.whois_lookup import whois_lookup
+from python.banner_grabber import banner_grabber
+from python.port_scanner import port_scanner
 import os
 
 
@@ -76,10 +78,18 @@ def menu():
             print("\nSubdomain Enumerator coming soon.")
 
         elif choice == "4":
-            print("\nBanner Grabber coming soon.")
+            host = input("\nEnter Host: ").strip()
+            port = int(input("Enter Port: "))
+
+            banner_grabber(host, port)
 
         elif choice == "5":
-            print("\nPort Scanner coming soon.")
+            host = input("\nEnter Host: ").strip()
+
+            start_port = int(input("Start Port: "))
+            end_port = int(input("End Port: "))
+
+            port_scanner(host, start_port, end_port)
 
         elif choice == "6":
             website = input("\nEnter Website URL: ").strip()
