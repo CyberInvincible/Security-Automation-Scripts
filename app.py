@@ -1,4 +1,5 @@
 from python.security_headers_checker import check_headers
+from python.dns_lookup import dns_lookup
 import os
 
 
@@ -52,7 +53,15 @@ def menu():
             print("\nWHOIS Lookup coming soon.")
 
         elif choice == "2":
-            print("\nDNS Lookup coming soon.")
+            domain = input("\nEnter Domain: ").strip()
+
+            domain = (
+                domain.replace("https://", "")
+                .replace("http://", "")
+                .split("/")[0]
+            )
+
+            dns_lookup(domain)
 
         elif choice == "3":
             print("\nSubdomain Enumerator coming soon.")
@@ -81,11 +90,11 @@ def menu():
             print("\nHash Generator coming soon.")
 
         elif choice == "0":
-            print("\nGoodbye!")
+            print("\nThank you for using CyberInvincible Security Toolkit!")
             break
 
         else:
-            print("\nInvalid option.")
+            print("\nInvalid option. Please try again.")
 
         pause()
 
