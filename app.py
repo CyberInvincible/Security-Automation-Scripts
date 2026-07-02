@@ -1,36 +1,86 @@
-def main():
+import os
+
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+def pause():
+    input("\nPress Enter to continue...")
+
+
+def menu():
     while True:
+        clear_screen()
+
+        print("=" * 60)
+        print("     CyberInvincible Security Toolkit (CIST)")
+        print("=" * 60)
+
+        print("\nReconnaissance")
+        print("-" * 20)
+        print("1. WHOIS Lookup")
+        print("2. DNS Lookup")
+        print("3. Subdomain Enumerator")
+        print("4. Banner Grabber")
+
+        print("\nNetwork")
+        print("-" * 20)
+        print("5. Port Scanner")
+
+        print("\nWeb Security")
+        print("-" * 20)
+        print("6. Security Headers Checker")
+        print("7. SSL Certificate Analyzer")
+        print("8. HTTP Methods Tester")
+
+        print("\nUtilities")
+        print("-" * 20)
+        print("9. Hash Generator")
+
+        print("\n0. Exit")
+
         print("\n" + "=" * 60)
-        print(" CyberInvincible Security Toolkit (CIST)")
-        print("=" * 60)
-        print("1. Security Headers Checker")
-        print("2. Port Scanner (Coming Soon)")
-        print("3. WHOIS Lookup (Coming Soon)")
-        print("4. DNS Lookup (Coming Soon)")
-        print("0. Exit")
-        print("=" * 60)
 
         choice = input("Select an option: ").strip()
 
         if choice == "1":
-            print("\nLaunching Security Headers Checker...\n")
+            print("\nWHOIS Lookup coming soon.")
 
         elif choice == "2":
-            print("\nPort Scanner - Coming Soon!")
+            print("\nDNS Lookup coming soon.")
 
         elif choice == "3":
-            print("\nWHOIS Lookup - Coming Soon!")
+            print("\nSubdomain Enumerator coming soon.")
 
         elif choice == "4":
-            print("\nDNS Lookup - Coming Soon!")
+            print("\nBanner Grabber coming soon.")
+
+        elif choice == "5":
+            print("\nPort Scanner coming soon.")
+
+        elif choice == "6":
+            print("\nLaunching Security Headers Checker...")
+            print("Integration coming next.")
+
+        elif choice == "7":
+            print("\nSSL Certificate Analyzer coming soon.")
+
+        elif choice == "8":
+            print("\nHTTP Methods Tester coming soon.")
+
+        elif choice == "9":
+            print("\nHash Generator coming soon.")
 
         elif choice == "0":
-            print("\nThank you for using CIST!")
+            print("\nGoodbye!")
             break
 
         else:
-            print("\nInvalid option. Please try again.")
+            print("\nInvalid option.")
+
+        pause()
 
 
 if __name__ == "__main__":
-    main()
+    menu()
