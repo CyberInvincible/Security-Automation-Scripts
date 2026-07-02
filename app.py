@@ -1,3 +1,4 @@
+from python.security_headers_checker import check_headers
 import os
 
 
@@ -14,7 +15,10 @@ def menu():
         clear_screen()
 
         print("=" * 60)
-        print("     CyberInvincible Security Toolkit (CIST)")
+        print("      CyberInvincible Security Toolkit (CIST)")
+        print("                  Version 1.0.0")
+        print("=" * 60)
+        print("        Python-Based Cybersecurity Toolkit")
         print("=" * 60)
 
         print("\nReconnaissance")
@@ -60,8 +64,12 @@ def menu():
             print("\nPort Scanner coming soon.")
 
         elif choice == "6":
-            print("\nLaunching Security Headers Checker...")
-            print("Integration coming next.")
+            website = input("\nEnter Website URL: ").strip()
+
+            if not website.startswith("http"):
+                website = "https://" + website
+
+            check_headers(website)
 
         elif choice == "7":
             print("\nSSL Certificate Analyzer coming soon.")
