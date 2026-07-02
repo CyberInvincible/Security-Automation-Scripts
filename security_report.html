@@ -1,0 +1,124 @@
+
+<html>
+<head>
+<title>Security Header Report</title>
+<style>
+body {
+font-family: Arial;
+margin:40px;
+background:#f5f5f5;
+}
+
+table {
+border-collapse: collapse;
+width:100%;
+}
+
+th,td {
+border:1px solid black;
+padding:8px;
+}
+
+.pass {
+color:green;
+font-weight:bold;
+}
+
+.fail {
+color:red;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Security Header Report</h1>
+
+<p><b>Scan Time:</b> 2026-07-01 20:11:53.193323</p>
+
+<p><b>Target:</b> https://www.google.com</p>
+
+<p><b>Final URL:</b> https://www.google.com/</p>
+
+<p><b>Status Code:</b> 200</p>
+
+<h2>Security Score: 17% (F)</h2>
+
+<table>
+
+<tr>
+
+<th>Header</th>
+
+<th>Status</th>
+
+<th>Description</th>
+
+</tr>
+
+<tr>
+
+<td>Strict-Transport-Security</td>
+
+<td class="fail">FAIL</td>
+
+<td>Helps enforce HTTPS.</td>
+
+</tr>
+
+<tr>
+
+<td>Content-Security-Policy</td>
+
+<td class="fail">FAIL</td>
+
+<td>Helps prevent Cross-Site Scripting (XSS).</td>
+
+</tr>
+
+<tr>
+
+<td>X-Content-Type-Options</td>
+
+<td class="fail">FAIL</td>
+
+<td>Prevents MIME-type sniffing.</td>
+
+</tr>
+
+<tr>
+
+<td>X-Frame-Options</td>
+
+<td class="pass">PASS</td>
+
+<td>Protects against clickjacking.</td>
+
+</tr>
+
+<tr>
+
+<td>Referrer-Policy</td>
+
+<td class="fail">FAIL</td>
+
+<td>Controls referrer information.</td>
+
+</tr>
+
+<tr>
+
+<td>Permissions-Policy</td>
+
+<td class="fail">FAIL</td>
+
+<td>Restricts browser features.</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
