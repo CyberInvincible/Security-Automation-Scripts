@@ -1,5 +1,6 @@
 from python.security_headers_checker import check_headers
 from python.dns_lookup import dns_lookup
+from python.whois_lookup import whois_lookup
 import os
 
 
@@ -50,7 +51,15 @@ def menu():
         choice = input("Select an option: ").strip()
 
         if choice == "1":
-            print("\nWHOIS Lookup coming soon.")
+            domain = input("\nEnter Domain: ").strip()
+
+            domain = (
+                domain.replace("https://", "")
+                .replace("http://", "")
+                .split("/")[0]
+            )
+
+            whois_lookup(domain)
 
         elif choice == "2":
             domain = input("\nEnter Domain: ").strip()
